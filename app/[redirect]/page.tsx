@@ -12,7 +12,6 @@ export default async function Redirect(params:{
     params: {redirect: string}
 }) {
     const redirectURI: Response  = await axios.get(`${process.env.API_LINK}/api/short?alias=${params.params.redirect}`)
-    console.log(redirectURI.data.code)
     if (redirectURI.data.code === 404) { 
         return(
             <>

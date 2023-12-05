@@ -10,12 +10,12 @@ interface TruncateTextProps {
 }
 
 interface AuthUserProps {
-    email: string,
+    apikey: string,
     apiAddress: string,
     appAddress: string
 }
 
-export default function AddForm({ apiAddress, appAddress, email }: AuthUserProps) {
+export default function AddForm({ apiAddress, appAddress, apikey }: AuthUserProps) {
     const [link, setLink] = useState("")
     const [alias, setAlias] = useState("Please add some link")
     const [isSvgChanged, setIsSvgChanged] = useState(false);
@@ -24,7 +24,7 @@ export default function AddForm({ apiAddress, appAddress, email }: AuthUserProps
         e.preventDefault()
         axios
             .post(`${apiAddress}/api/short`, {
-                email: email,
+                apikey: apikey,
                 redirect: link,
             })
             .then((response) => {
