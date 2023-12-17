@@ -137,7 +137,7 @@ export default function AddForm({ apiAddress, appAddress, apikey }: AuthUserProp
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
                             {myLink.map((item: any, index: any) => (
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
                                     <td className="px-6 py-4 whitespace-nowrap"><TruncateText text={item.redirect} maxLength={15} /></td>
                                     <td className="px-6 py-4 whitespace-nowrap">{item.alias}</td>
